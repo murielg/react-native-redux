@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
-import { View, ListView } from 'react-native';
+import { ListView } from 'react-native';
 import AlbumDetail from './AlbumDetail';
 
 class AlbumList extends Component {
 
-  state = { albums: [] };
+  state = { 
+    albums: [],
+    searchTerm: 'no+doubt'
+  };
 
   componentWillMount() {
     this.state = {
-     dataSource: new ListView.DataSource({
+      dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2
-     }),
+      }),
       loaded: false
     };
 
-    fetch('https://itunes.apple.com/search?term=no+doubt&limit=5&entity=album')
-    .then((response) => response.json())
+    fetch('https://itunes.apple.com/search?term=no+doubt&limit=10&entity=album')
+      .then((response) => response.json())
       .then((responseData) => {
         this.setState({
           dataSource: this.state.dataSource.cloneWithRows(responseData.results),
@@ -33,14 +36,11 @@ class AlbumList extends Component {
 
   render () {
     return (
-      <View style={{flex:1}}>
-        <ListView
+      <ListView
         dataSource={this.state.dataSource}
         renderRow={this.renderAlbums}
       />
-      </View>
     );
-
   }
 }
 
