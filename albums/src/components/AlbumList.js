@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, ListView } from 'react-native';
+import { View, ListView } from 'react-native';
+import AlbumDetail from './AlbumDetail';
 
 class AlbumList extends Component {
 
@@ -23,15 +24,10 @@ class AlbumList extends Component {
       })
       .done();  
   }
-  renderAlbums(album) {
-    return this.state.albums.map(album => 
-      <Text>{album.collectionName}</Text>
-    );
-  }
 
-  renderAlbum(album){
+  renderAlbums(album){
     return (
-      <Text>{album.collectionName}</Text>
+      <AlbumDetail key={album.collectionId} album={album} />
     );
   }
 
@@ -40,7 +36,7 @@ class AlbumList extends Component {
       <View style={{flex:1}}>
         <ListView
         dataSource={this.state.dataSource}
-        renderRow={this.renderAlbum}
+        renderRow={this.renderAlbums}
       />
       </View>
     );
