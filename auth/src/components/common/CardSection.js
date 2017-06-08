@@ -20,5 +20,6 @@ const styles = {
     paddingTop: 5, 
     paddingBottom: 5
   }
-}
+};
+
 export { CardSection };

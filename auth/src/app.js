@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import firebase from 'firebase';
 import { FB_API, FB_DOMAIN, FB_DB, FB_ID, FB_SB, FB_MSID } from 'react-native-dotenv';
 import { Header } from './components/common';
+import LoginForm from './components/LoginForm';
 
 class App extends Component {
 
@@ -19,8 +20,8 @@ class App extends Component {
   render() {
     return (
       <View>
-        <Header headerText="Authentication" />
-        <Text>App</Text>
+        <Header headerText="Auth" />
+        <LoginForm />
       </View>
     );
   }
