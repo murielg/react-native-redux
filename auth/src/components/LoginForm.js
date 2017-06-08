@@ -4,6 +4,10 @@ import { Card, Button, CardSection, Input } from './common';
 class LoginForm extends Component {
   state = { email: '', password: '', error: '', loading: false };
 
+  onButtonPress() {
+  
+  }
+
   render() {
     return (
       <Card>
@@ -25,7 +29,10 @@ class LoginForm extends Component {
           />
         </CardSection>
         <CardSection>
-          <Button text="Login" />
+          <Button
+            onPress={this.onButtonPress.bind(this)}
+            text="Login" 
+          />
         </CardSection>
       </Card>
     );
