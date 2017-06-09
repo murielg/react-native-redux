@@ -6,16 +6,18 @@ import { Header } from './components/common';
 import LoginForm from './components/LoginForm';
 
 class App extends Component {
-
+  
   componentWillMount() {
-    firebase.initializeApp({
-      apiKey: FB_API,
-      authDomain: FB_DOMAIN,
-      databaseURL: FB_DB,
-      projectId: FB_ID,
-      storageBucket: FB_SB,
-      messagingSenderId: FB_MSID
-    });
+     const config = {
+      apiKey: `${FB_API}`,
+      authDomain: `${FB_DOMAIN}`,
+      databaseURL: `${FB_DB}`,
+      projectId: `${FB_ID}`,
+      storageBucket: `${FB_SB}`,
+      messagingSenderId: `${FB_MSID}`
+    };
+
+    firebase.initializeApp(config);
   }
   render() {
     return (
