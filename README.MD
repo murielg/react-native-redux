@@ -13,7 +13,7 @@ Watch and develop with `react-native run-ios` or `react-native run-android`
 
 `npm start` and then try opening Xcode or Android Studio, open the respective project corresponding to your choice of OS, and build/run from inside your IDE.
 
-Upgrading also seems to resolve some build issues [](https://facebook.github.io/react-native/docs/upgrading.html)
+Upgrading also seems to resolve some build issues [Upgrade React Native](https://facebook.github.io/react-native/docs/upgrading.html)
 
 For other troubleshooting issues, go to [React Native Troubleshooting](https://facebook.github.io/react-native/docs/troubleshooting.html)
 
