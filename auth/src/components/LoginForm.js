@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
 import firebase from 'firebase';
-import { Card, Button, CardSection, Input } from './common';
+import { Card, Button, CardSection, Input, Spinner } from './common';
 
 class LoginForm extends Component {
   state = { email: '', password: '', error: '', loading: false };
 
   onButtonPress() {
     const { email, password } = this.state;
-    console.log('pressed');
-    //https://firebase.google.com/docs/auth/web/start
+    this.setState({ error: ''});
+    // firebase docs: https://firebase.google.com/docs/auth/web/start
     firebase.auth().signInWithEmailAndPassword(email, password)
     //.then(this.onLoginSucess.bind(this))
       .catch((error) => {
