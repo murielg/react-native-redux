@@ -8,50 +8,75 @@ class LoginForm extends Component {
 
   onButtonPress() {
     const { email, password } = this.state;
-    this.setState({ error: ''});
-    // firebase docs: https://firebase.google.com/docs/auth/web/start
+
+    this.setState({ error: '', loading: true});
+
     firebase.auth().signInWithEmailAndPassword(email, password)
-    //.then(this.onLoginSucess.bind(this))
-      .catch((error) => {
-        console.log(error.code, error.message);
+      .then(this.onLoginSuccess.bind(this))
+      .catch(() => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
-          .catch(() => {
-            this.setState({ error: 'Authentication Failed.' });
-          });
+          .then(this.onLoginSuccess.bind(this))
+          .catch(this.onLoginFail.bind(this));
       });
   }
 
-        render() {
-          return (
-            <Card>
-              <CardSection>
-                <Input
-                  placeholder="email@address.com"
-                  label="Email"
-                  value={this.state.email}
-                  onChangeText={email => this.setState({ email })}
-                />
-              </CardSection>
-              <CardSection>
-                <Input
-                  secureTextEntry
-                  placeholder="password"
-                  label="Password"
-                  value={this.state.password}
-                  onChangeText={password => this.setState({ password })}
-                />
-              </CardSection>
-              <Text style={styles.errorTextStyle}>
-                {this.state.error}
-              </Text>
-              <CardSection>
-                <Button onPress={this.onButtonPress.bind(this)}>
-                  Log in
-                </Button>
-              </CardSection>
-            </Card>
-          );
-        }
+  onLoginFail() {
+    this.setState({
+      error: 'Authentication Failed',
+      loading: false
+    });
+  }
+
+  onLoginSuccess() {
+    this.setState({
+      error: '',
+      loading: false,
+      email: '',
+      password: ''
+    });
+  }
+
+  renderButton() {
+    if (this.state.loading) {
+      return <Spinner size="small" />
+    }
+
+    return (
+      <Button onPress={this.onButtonPress.bind(this)}>
+        Log in
+      </Button>
+    );
+  }
+
+  render() {
+    return (
+      <Card>
+        <CardSection>
+          <Input
+            placeholder="email@address.com"
+            label="Email"
+            value={this.state.email}
+            onChangeText={email => this.setState({ email })}
+          />
+        </CardSection>
+        <CardSection>
+          <Input
+            secureTextEntry
+            placeholder="password"
+            label="Password"
+            value={this.state.password}
+            onChangeText={password => this.setState({ password })}
+          />
+        </CardSection>
+        <Text style={styles.errorTextStyle}>
+          {this.state.error}
+        </Text>
+        <CardSection>
+          {this.renderButton()}
+        </CardSection>
+      </Card>
+    );
+  }
 }
 
 const styles = {
