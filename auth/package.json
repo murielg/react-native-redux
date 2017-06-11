@@ -11,7 +11,7 @@
 		"eslint-config-rallycoding": "^3.2.0",
 		"firebase": "^4.1.2",
 		"react": "16.0.0-alpha.12",
-		"react-native": "0.45.0",
+		"react-native": "0.45.1",
 		"react-native-dotenv": "^0.0.4"
 	},
 	"devDependencies": {
