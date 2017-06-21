@@ -14,7 +14,7 @@ const App = () => {
         <LibraryList />
       </View>
     </Provider>
-  )
+  );
 };
 
 export default App;
