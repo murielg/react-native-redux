@@ -5,6 +5,8 @@ import { createStore } from 'redux';
 import reducers from './reducers';
 import firebase from 'firebase';
 import { FB_API, FB_DOMAIN, FB_DB, FB_ID, FB_SB, FB_MSID } from 'react-native-dotenv';
+import LoginForm from './components/LoginForm';
+
 class App extends Component { 
   componentWillMount() {
      const config = {
@@ -22,11 +24,8 @@ class App extends Component {
   render() {
     return(
       <Provider store={createStore(reducers)}>
-        <View>
-          <Text>
-            App
-          </Text>
-        </View>
+        <LoginForm />
+
       </Provider>
     );
   }
