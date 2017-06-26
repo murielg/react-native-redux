@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Card, CardSection, Input, Button } from './common';
+import { Header, Card, CardSection, Input, Button } from './common';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged } from '../actions';
 
@@ -10,33 +11,36 @@ class LoginForm extends Component {
   onPasswordChange(text) {
     this.props.passwordChanged(text);
   }
-  
+
   render() {
     return (
-      <Card>
-        <CardSection>
-          <Input
-            label="Email"
-            placeholder="email@email.com"
-            onChangeText={this.onEmailChange.bind(this)}
-            value={this.props.email}
-          />
-        </CardSection>
-        <CardSection>
-          <Input
-            secureTextEntry
-            label="Password"
-            placeholder="password"
-            onChangeText={this.onPasswordChange.bind(this)}
-             value={this.props.password}
-          />
-        </CardSection>
-        <CardSection>
-          <Button>
-            Login
-          </Button>
-        </CardSection>
-      </Card>
+      <View>
+        <Header headerText="Login"/>
+        <Card>
+          <CardSection>
+            <Input
+              label="Email"
+              placeholder="email@email.com"
+              onChangeText={this.onEmailChange.bind(this)}
+              value={this.props.email}
+            />
+          </CardSection>
+          <CardSection>
+            <Input
+              secureTextEntry
+              label="Password"
+              placeholder="password"
+              onChangeText={this.onPasswordChange.bind(this)}
+              value={this.props.password}
+            />
+          </CardSection>
+          <CardSection>
+            <Button>
+              Login
+            </Button>
+          </CardSection>
+        </Card>
+      </View>
     );
   }
 }
