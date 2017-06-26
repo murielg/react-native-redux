@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
 import firebase from 'firebase';
+import ReduxThunk from 'redux-thunk';
 import { FB_API, FB_DOMAIN, FB_DB, FB_ID, FB_SB, FB_MSID } from 'react-native-dotenv';
 import LoginForm from './components/LoginForm';
 
@@ -22,10 +22,11 @@ class App extends Component {
   }
 
   render() {
-    return(
-      <Provider store={createStore(reducers)}>
-        <LoginForm />
+    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
+    return(
+      <Provider store={store}>
+        <LoginForm />
       </Provider>
     );
   }
