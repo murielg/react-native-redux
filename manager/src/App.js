@@ -5,7 +5,7 @@ import reducers from './reducers';
 import firebase from 'firebase';
 import ReduxThunk from 'redux-thunk';
 import { FB_API, FB_DOMAIN, FB_DB, FB_ID, FB_SB, FB_MSID } from 'react-native-dotenv';
-import LoginForm from './components/LoginForm';
+import Router from './Router';
 
 class App extends Component { 
   componentWillMount() {
@@ -26,7 +26,7 @@ class App extends Component {
 
     return(
       <Provider store={store}>
-        <LoginForm />
+        <Router />
       </Provider>
     );
   }
