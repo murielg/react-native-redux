@@ -2,6 +2,8 @@
 
 ### You know what to do
 
+Install React Native CLI with `npm install -g react-native-cli`
+
 Install dependencies with `yarn install`
 
 Watch and develop with `react-native run-ios` or `react-native run-android`
