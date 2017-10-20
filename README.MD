@@ -1,6 +1,6 @@
 # React Native and Redux Apps
 
-### You know what to do
+- For Projects created with `create-react-app` use EXPO, otherwise try the following:
 
 Install React Native CLI with `npm install -g react-native-cli`
 
@@ -10,6 +10,8 @@ Watch and develop with `react-native run-ios` or `react-native run-android`
 
 - `⌘+R` Reload iOS Simulator or `R+R` Reload Android Simulator 
   - You can also enable live reloading, and debug JS remotely in your browser. Just open the development menu, `⌘+M ` for android and `⌘+D` for iOS.
+  
+ 
 
 ### Troubleshooting
 
