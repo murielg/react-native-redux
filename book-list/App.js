@@ -1,14 +1,47 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import {StyleSheet, Text, ListView} from 'react-native';
 
-export default class App extends React.Component {
+export default class App extends Component {
+
+  constructor(){
+    super();
+    this.state = {
+      posts: []
+    }
+  }
+
+  componentWillMount() {
+    this.state = {
+      dataSource: new ListView.DataSource({
+        rowHasChanged: (row1, row2) => row1 !== row2
+      }),
+    };
+
+    let URL = "http://clickherelabs.com/wp-json/wp/v2/posts?_embed";
+
+    fetch(URL)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          dataSource: this.state.dataSource.cloneWithRows(response),
+        })
+      })
+      .done();
+  }
+
+  renderPostList(item) {
+    return (
+      <Text>{item.slug}</Text>
+    );
+  }
+
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <ListView
+        dataSource={this.state.dataSource}
+        renderRow={this.renderPostList}
+      />
     );
   }
 }
