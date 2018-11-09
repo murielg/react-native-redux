@@ -355,6 +355,13 @@ axios@^0.16.1:
     follow-redirects "^1.2.3"
     is-buffer "^1.1.5"
 
+axios@^0.17.1:
+  version "0.17.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.17.1.tgz#2d8e3e5d0bdbd7327f91bc814f5c57660f81824d"
+  dependencies:
+    follow-redirects "^1.2.5"
+    is-buffer "^1.1.5"
+
 babel-code-frame@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-code-frame/-/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
@@ -527,12 +534,6 @@ babel-plugin-check-es2015-constants@^6.5.0, babel-plugin-check-es2015-constants@
   resolved "https://registry.yarnpkg.com/babel-plugin-check-es2015-constants/-/babel-plugin-check-es2015-constants-6.22.0.tgz#35157b101426fd2ffd3da3f75c7d1e91835bbf8a"
   dependencies:
     babel-runtime "^6.22.0"
-
-babel-plugin-dotenv@0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-dotenv/-/babel-plugin-dotenv-0.1.0.tgz#dd769175a5a913c940ad18316c36621fc04598b2"
-  dependencies:
-    dotenv "^2.0.0"
 
 babel-plugin-external-helpers@^6.18.0:
   version "6.22.0"
@@ -1637,7 +1638,7 @@ decamelize@^1.0.0, decamelize@^1.1.1:
 
 dedent@^0.6.0:
   version "0.6.0"
-  resolved "https://registry.yarnpkg.com/dedent/-/dedent-0.6.0.tgz#0e6da8f0ce52838ef5cec5c8f9396b0c1b64a3cb"
+  resolved "http://registry.npmjs.org/dedent/-/dedent-0.6.0.tgz#0e6da8f0ce52838ef5cec5c8f9396b0c1b64a3cb"
 
 deep-diff@0.3.4:
   version "0.3.4"
@@ -1727,10 +1728,6 @@ dot-case@^1.1.0:
   resolved "https://registry.yarnpkg.com/dot-case/-/dot-case-1.1.2.tgz#1e73826900de28d6de5480bc1de31d0842b06bec"
   dependencies:
     sentence-case "^1.1.2"
-
-dotenv@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-2.0.0.tgz#bd759c357aaa70365e01c96b7b0bec08a6e0d949"
 
 duplexer2@0.0.2:
   version "0.0.2"
@@ -2163,7 +2160,7 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
-follow-redirects@^1.2.3:
+follow-redirects@^1.2.3, follow-redirects@^1.2.5:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.2.6.tgz#4dcdc7e4ab3dd6765a97ff89c3b4c258117c79bf"
   dependencies:
@@ -2225,7 +2222,7 @@ fresh@0.5.2:
 
 fs-extra@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-1.0.0.tgz#cd3ce5f7e7cb6145883fcae3191e9877f8587950"
+  resolved "http://registry.npmjs.org/fs-extra/-/fs-extra-1.0.0.tgz#cd3ce5f7e7cb6145883fcae3191e9877f8587950"
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^2.1.0"
@@ -2667,6 +2664,10 @@ inflight@^1.0.4:
 inherits@2, inherits@2.0.3, inherits@^2.0.3, inherits@~2.0.0, inherits@~2.0.1, inherits@~2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
+
+inherits@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.1.tgz#b17d08d326b4423e568eff719f91b0b1cbdf69f1"
 
 ini@~1.3.0:
   version "1.3.5"
@@ -4270,6 +4271,13 @@ path-type@^2.0.0:
   dependencies:
     pify "^2.0.0"
 
+path@^0.12.7:
+  version "0.12.7"
+  resolved "https://registry.yarnpkg.com/path/-/path-0.12.7.tgz#d4dc2a506c4ce2197eb481ebfcd5b36c0140b10f"
+  dependencies:
+    process "^0.11.1"
+    util "^0.10.3"
+
 pause@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/pause/-/pause-0.1.0.tgz#ebc8a4a8619ff0b8a81ac1513c3434ff469fdb74"
@@ -4374,6 +4382,10 @@ probe-image-size@^3.1.0:
 process-nextick-args@~1.0.6:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-1.0.7.tgz#150e20b756590ad3f91093f25a4f2ad8bff30ba3"
+
+process@^0.11.1:
+  version "0.11.10"
+  resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
 
 process@~0.5.1:
   version "0.5.2"
@@ -4531,11 +4543,9 @@ react-native-branch@2.0.0-beta.3:
   version "2.0.0-beta.3"
   resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-2.0.0-beta.3.tgz#2167af86bbc9f964bd45bd5f37684e5b54965e32"
 
-react-native-dotenv@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-dotenv/-/react-native-dotenv-0.1.0.tgz#201de3b47a514476bfd33117a54ddb4cf90b00d8"
-  dependencies:
-    babel-plugin-dotenv "0.1.0"
+react-native-config@^0.11.1:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/react-native-config/-/react-native-config-0.11.1.tgz#b5a7d1aaa3c02da7d494f1e79565cd061902102d"
 
 react-native-gesture-handler@1.0.0-alpha.30:
   version "1.0.0-alpha.30"
@@ -5723,6 +5733,12 @@ util.promisify@^1.0.0:
   dependencies:
     define-properties "^1.1.2"
     object.getownpropertydescriptors "^2.0.3"
+
+util@^0.10.3:
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/util/-/util-0.10.3.tgz#7afb1afe50805246489e3db7fe0ed379336ac0f9"
+  dependencies:
+    inherits "2.0.1"
 
 utils-merge@1.0.0:
   version "1.0.0"

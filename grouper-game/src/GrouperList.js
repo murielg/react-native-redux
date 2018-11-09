@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ListView } from 'react-native';
 import Row from './Row';
+import {fetchEmployees} from "./api/api";
 
 
 
@@ -14,6 +15,8 @@ class GrouperList extends Component {
 
 
   componentWillMount() {
+
+    fetchEmployees();
 
     this.setState ({
       dataSource: new ListView.DataSource({
